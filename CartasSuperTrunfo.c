@@ -74,8 +74,8 @@ int main() {
     printf("Pib:\n");
     scanf("%f", &pib);
 
-     densidade = populaçao / area;
-    capita = pib / populaçao; 
+     densidade =(float) populaçao / area;
+    capita = (float)pib / populaçao; 
 
     printf("\n--- Carta 2 ---\n");
     printf("Cidade: %-20s\n", nome_cidade);
