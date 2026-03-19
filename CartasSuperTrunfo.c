@@ -37,8 +37,8 @@ int main() {
     printf("Pib:\n");
     scanf("%f", &pib);
 
-    capita = populaçao / area;
-    densidade = pib / populaçao; 
+    densidade = populaçao / area;
+    capita = pib / populaçao; 
 
     // Cadastro das Cartas:
     // Sugestão: Utilize a função scanf para capturar as entradas do usuário para cada atributo.
@@ -74,8 +74,8 @@ int main() {
     printf("Pib:\n");
     scanf("%f", &pib);
 
-     capita = populaçao / area;
-    densidade = pib / populaçao; 
+     densidade = populaçao / area;
+    capita = pib / populaçao; 
 
     printf("\n--- Carta 2 ---\n");
     printf("Cidade: %-20s\n", nome_cidade);
