@@ -12,9 +12,8 @@ int main() {
     unsigned long int populaçao1, populaçao2;
     int ponto_turistico1, ponto_turistico2;
     float area1, area2, pib1, pib2, densidade1, densidade2, capita1, capita2, densidadeInvertida1, densidadeInvertida2, superPoder1, superPoder2;
-
+    //Defini as variáveis a partir dos tipos de dados que iria receber: números inteiros, letras...
     
-    // Sugestão: Defina variáveis separadas para cada atributo da cidade.
     // Exemplos de atributos: código da cidade, nome, população, área, PIB, número de pontos turísticos.
     printf("\n --- Super Trunfo ---\n");
     printf("\n --- Carta 1 ---\n");
@@ -37,15 +36,12 @@ int main() {
 
     printf("Pib:\n");
     scanf("%f", &pib1);
-
+    //Interagi com o usuario utilizando printf e scanf para receber os dados e guiar o usuario nesse processo para cadastrar as cartas.
     densidade1 = (float)populaçao1 / area1;
     capita1 = (pib1 *1000000000) /(float)populaçao1; 
     densidadeInvertida1 = 1/densidade1;
     superPoder1 = (float)populaçao1 + area1 + pib1 + densidade1 + capita1 + ponto_turistico1 + densidadeInvertida1; 
-
-
-    // Cadastro das Cartas:
-    // Sugestão: Utilize a função scanf para capturar as entradas do usuário para cada atributo.
+     //Aqui realizei pequenas operações dentro do própio codigo para calcular alguns dados.
     // Solicite ao usuário que insira as informações de cada cidade, como o código, nome, população, área, etc.
     printf("\n--- Carta 1 ---\n");
     printf("Cidade: %-20s\n", nome_cidade1);
@@ -57,7 +53,7 @@ int main() {
     printf("Densidade populacional: %.2f hab/km2\n", densidade1);
     printf("Pib per capita: %.2f reais\n", capita1);
     printf("Super poder: %.2f\n", superPoder1);
-
+    // exibe os dados preenchidos pelo usuario na primeira carta(incluindo o  super poder).
     printf("\n--- Carta 2 ---\n");
     printf("Digite os dados da carta:\n");
 
@@ -83,7 +79,7 @@ int main() {
     capita2 = (pib2*1000000000) / (float)populaçao2; 
      densidadeInvertida2 = 1/densidade2;
     superPoder2 = (float)populaçao2 + area2 + pib2 + densidade2 + capita2 + ponto_turistico2 + densidadeInvertida2; 
-
+    //Refiz todo o processo para a carta 2.
     printf("\n--- Carta 2 ---\n");
     printf("Cidade: %-20s\n", nome_cidade2);
     printf("Codigo: %s\n", codigo2);
@@ -95,19 +91,72 @@ int main() {
     printf("Pib per capita: %.2f reais\n", capita2);
     printf("Super poder: %.2f\n", superPoder2);
     
-    printf("\n****Comparação das Cartas:****\n");
-    printf("\nConfira o resultado:\n");
-    printf("\nPara 1 verdadeiro, para 0 falso!\n");
-    printf("População: Carta 1 venceu: (%d)\n", populaçao1 > populaçao2);
-    printf(" Área: Carta 1 venceu: (%d)\n", area1 > area2);
-    printf("Pib: Carta 1 venceu: (%d)\n", pib1 > pib2);
-    printf("Pontos turisticos: Carta 1  venceu: (%d)\n", ponto_turistico1 > ponto_turistico2);
-    printf("Densidade populacional: Carta 1  venceu: (%d)\n", densidade1 < densidade2);
-    printf("Pib per capita: Carta 1  venceu: (%d)\n", capita1 > capita2);
-    printf("Super poder: Carta 1  venceu: (%d)\n", superPoder1 > superPoder2);
-    // Exibição dos Dados das Cartas:
-    // Sugestão: Utilize a função printf para exibir as informações das cartas cadastradas de forma clara e organizada.
-    // Exiba os valores inseridos para cada atributo da cidade, um por linha.
+   // printf("\n****Comparação das Cartas:****\n");
+   // printf("\nConfira o resultado:\n");
+   // printf("\nPara 1 verdadeiro, para 0 falso!\n");
+   // printf("População: Carta 1 venceu: (%d)\n", populaçao1 > populaçao2);
+   // printf(" Área: Carta 1 venceu: (%d)\n", area1 > area2);
+    //printf("Pib: Carta 1 venceu: (%d)\n", pib1 > pib2);
+    //printf("Pontos turisticos: Carta 1  venceu: (%d)\n", ponto_turistico1 > ponto_turistico2);
+    //printf("Densidade populacional: Carta 1  venceu: (%d)\n", densidade1 < densidade2);
+    //printf("Pib per capita: Carta 1  venceu: (%d)\n", capita1 > capita2);
+    //printf("Super poder: Carta 1  venceu: (%d)\n", superPoder1 > superPoder2);
+
+    //Utilizei oeradores relacionais para definir a carta vencedora a partir de cada atributo.
+    //Agora, a partir do conhecimento adquirido irei usar estruturas de decisões para definir as cartas vencedoras.
+    printf("\n****Comparação das Cartas****\n");
+
+   printf("População:\n");
+    if (populaçao1> populaçao2) {
+        printf("Carta 1 venceu!\n");
+    } else {
+        printf("Carta 2 venceu!\n");
+    }
+
+    printf("Area:\n");
+
+    if(area1>area2){
+        printf("Carta 1 venceu!\n");
+    } else {
+        printf("Carta 2 venceu!\n");
+    }
+
+  printf("PIB:\n");
+    if( pib1 > pib2) {
+        printf("Carta 1 venceu!\n");
+    } else {
+        printf("Carta 2 venceu!\n");
+    }
+
+   printf("Pontos turisticos:\n");
+
+    if(ponto_turistico1 > ponto_turistico2) {
+        printf("Carta 1 venceu!\n");
+    } else {
+        printf("Carta 2 venceu!\n");
+    }
+   printf("Densidade:\n");
+
+    if(densidade1 < densidade2) {
+        printf("Carta 1 venceu!\n");
+    } else{
+        printf("Carta 2 venceu!\n");
+    }
+   printf("PIB per Capita:\n");
+
+    if(capita1 > capita2) {
+        printf("Carta 1 venceu!\n");
+    } else {
+        printf("Carta 2 venceu!\n");
+    }
+
+    printf("Super Poder:\n");
+
+    if ( superPoder1 > superPoder2) {
+        printf("Carta 1 venceu!\n");
+    } else {
+        printf("Carta 2 venceu!\n");
+    }
 
     return 0;
 }
