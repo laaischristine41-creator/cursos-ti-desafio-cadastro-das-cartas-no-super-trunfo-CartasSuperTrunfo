@@ -10,7 +10,7 @@ int main() {
     char nome_cidade1[50], nome_cidade2[50];
     char codigo1[10], codigo2[10];
     unsigned long int populaçao1, populaçao2;
-    int ponto_turistico1, ponto_turistico2;
+    int ponto_turistico1, ponto_turistico2, opcao1, opcao2;
     float area1, area2, pib1, pib2, densidade1, densidade2, capita1, capita2, densidadeInvertida1, densidadeInvertida2, superPoder1, superPoder2;
     //Defini as variáveis a partir dos tipos de dados que iria receber: números inteiros, letras...
     
@@ -91,9 +91,9 @@ int main() {
     printf("Pib per capita: %.2f reais\n", capita2);
     printf("Super poder: %.2f\n", superPoder2);
     
-   // printf("\n****Comparação das Cartas:****\n");
+   // printf("\n****Comparação das Cartas:****\n"); - Primeira forma de comparação de cartas.
    // printf("\nConfira o resultado:\n");
-   // printf("\nPara 1 verdadeiro, para 0 falso!\n");
+   // printf("\nPara 1: verdadeiro, para 0: falso!\n");
    // printf("População: Carta 1 venceu: (%d)\n", populaçao1 > populaçao2);
    // printf(" Área: Carta 1 venceu: (%d)\n", area1 > area2);
     //printf("Pib: Carta 1 venceu: (%d)\n", pib1 > pib2);
@@ -102,61 +102,150 @@ int main() {
     //printf("Pib per capita: Carta 1  venceu: (%d)\n", capita1 > capita2);
     //printf("Super poder: Carta 1  venceu: (%d)\n", superPoder1 > superPoder2);
 
-    //Utilizei oeradores relacionais para definir a carta vencedora a partir de cada atributo.
+    //Utilizei operadores relacionais para definir a carta vencedora a partir de cada atributo.
     //Agora, a partir do conhecimento adquirido irei usar estruturas de decisões para definir as cartas vencedoras.
-    printf("\n****Comparação das Cartas****\n");
+   
+    //printf("\n****Comparação das Cartas****\n"); - segunda froma de comparação de cartas.
 
-   printf("População:\n");
-    if (populaçao1> populaçao2) {
+    //printf("População:\n");
+    //if (populaçao1> populaçao2) {
+     //   printf("Carta 1 venceu!\n");
+   // } else {
+     //   printf("Carta 2 venceu!\n");
+   // }
+
+    //printf("Area:\n");
+
+    //if(area1>area2){
+      //  printf("Carta 1 venceu!\n");
+    //} else {
+      //  printf("Carta 2 venceu!\n");
+   // }
+
+  //printf("PIB:\n");
+   // if( pib1 > pib2) {
+   //     printf("Carta 1 venceu!\n");
+   // } else {
+   //     printf("Carta 2 venceu!\n");
+   // }
+
+  // printf("Pontos turisticos:\n");
+
+   // if(ponto_turistico1 > ponto_turistico2) {
+   //     printf("Carta 1 venceu!\n");
+   // } else {
+   //     printf("Carta 2 venceu!\n");
+   // }
+   //printf("Densidade:\n");
+
+   // if(densidade1 < densidade2) {
+   //     printf("Carta 1 venceu!\n");
+   // } else{
+   //     printf("Carta 2 venceu!\n");
+   // }
+  // printf("PIB per Capita:\n");
+
+   // if(capita1 > capita2) {
+   //     printf("Carta 1 venceu!\n");
+   // } else {
+   //     printf("Carta 2 venceu!\n");
+   // }
+
+   // printf("Super Poder:\n");
+
+   // if ( superPoder1 > superPoder2) {
+   //     printf("Carta 1 venceu!\n");
+   // } else {
+   //     printf("Carta 2 venceu!\n");
+   // }
+// Avançando: criação de menu interativo com switch, if, else if, else para comparação de cartas
+   printf("***\n Comparação de Cartas ***\n");
+
+   printf("Escolha com qual atributo deseja jogar:\n");
+   printf("Lembre-se, para densidade, vence a carta com menor valor!!\n");
+   printf("1 - área;\n");
+   printf("2 - PIB;\n");
+   printf("3 - Pontos turisticos;\n");
+   printf("4 - Densidade;\n");
+   printf("5 - PIB per capita;\n");
+   printf("6 - Super Poder;\n");
+   scanf("%d", &opcao1);
+
+   switch (opcao1) {
+    case 1: 
+    printf("***Comparando Área***\n");
+
+    printf("%s: %.2f km2\n", nome_cidade1, area1);
+    printf("%s: %.2f km2\n", nome_cidade2, area2);
+    if(area1 > area2){
         printf("Carta 1 venceu!\n");
-    } else {
+    } else if(area1 < area2){
         printf("Carta 2 venceu!\n");
-    }
-
-    printf("Area:\n");
-
-    if(area1>area2){
-        printf("Carta 1 venceu!\n");
-    } else {
-        printf("Carta 2 venceu!\n");
-    }
-
-  printf("PIB:\n");
-    if( pib1 > pib2) {
-        printf("Carta 1 venceu!\n");
-    } else {
-        printf("Carta 2 venceu!\n");
-    }
-
-   printf("Pontos turisticos:\n");
-
-    if(ponto_turistico1 > ponto_turistico2) {
-        printf("Carta 1 venceu!\n");
-    } else {
-        printf("Carta 2 venceu!\n");
-    }
-   printf("Densidade:\n");
-
-    if(densidade1 < densidade2) {
-        printf("Carta 1 venceu!\n");
     } else{
-        printf("Carta 2 venceu!\n");
+        printf("Empate!!\n");
     }
-   printf("PIB per Capita:\n");
-
-    if(capita1 > capita2) {
+    break;
+    case 2: 
+    printf("***Comparando PIB***\n");
+    printf("%s: %.2f\n", nome_cidade1, pib1);
+    printf("%s: %.2f\n", nome_cidade2, pib2);
+    if (pib1 > pib2) {
         printf("Carta 1 venceu!\n");
-    } else {
+    } else if (pib1< pib2) {
         printf("Carta 2 venceu!\n");
+    } else{
+        printf("Empate!!\n");
     }
+    break;
+    case 3:
+     printf("***Comparando pontos turisticos***\n");
+    printf("%s: %d\n", nome_cidade1, ponto_turistico1);
+    printf("%s: %d\n", nome_cidade2, ponto_turistico2);
 
-    printf("Super Poder:\n");
-
-    if ( superPoder1 > superPoder2) {
+    if (ponto_turistico1 > ponto_turistico2){
         printf("Carta 1 venceu!\n");
-    } else {
+    }else{
+    if( ponto_turistico1<ponto_turistico2){
         printf("Carta 2 venceu!\n");
+    }else{
+        printf("Empate!\n");
+    } break;
+    case 4:
+    printf("***Comparando os pontos de densidade populacional***\n");
+    printf("%s: %.2f\n", nome_cidade1, densidade1);
+    printf("%s: %.2f\n", nome_cidade2, densidade2);
+    if (densidade1 < densidade2){
+        printf("Carta 1 venceu!\n");
     }
-
-    return 0;
+        else if (densidade1 > densidade2){
+            printf("Carta 2 venceu!\n");
+        } else{
+            printf("Empate!\n");
+        } break;
+    case 5: 
+    printf("***Comparando PIB per Capita***\n");
+    printf("%s: %.2f\n", nome_cidade1, capita1);
+    printf("%s: %.2f\n", nome_cidade2, capita2);
+    if (capita1 > capita2){
+        printf("Carta 1 venceu!\n");
+    } else if ( capita1 < capita2) {
+        printf("Carta 2 venceu!\n");
+    } else{
+        printf("Empate!\n");
+    } break;
+    case 6:
+    printf("***Comparando super poder***\n");
+    printf("%s: %.2f\n", nome_cidade1, superPoder1);
+    printf("%s: %.2f\n", nome_cidade2, superPoder2);
+    if (superPoder1 > superPoder2) {
+        printf("Carta 1 venceu!\n");
+    } else if (superPoder1 < superPoder2) {
+        printf("Carta 2 venceu!\n");
+    } else{
+        printf("Empate!\n");
+    } break;
+     default:
+     printf("Comando inválido!!\n");
+}
+return 0;
 }
